@@ -1,0 +1,3 @@
+Car, 544209
+SemiTruck, 36282
+Pickup, 1490
