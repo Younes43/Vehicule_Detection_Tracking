@@ -64,7 +64,7 @@ cp yolov4-obj.cfg yolov4.conv.137 ~/Vehicule_Detection_Tracking/darknet/cfg/
 ```
 ## YOLOv4 Training
 
-4. 
+4. Navigate to the darknet directory
 ```bash
 cd ~/Vehicule_Detection_Tracking/darknet
 ```
