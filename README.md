@@ -35,8 +35,10 @@ python train_market1501.py  --dataset_dir=../Multi-Camera-Live-Object-Tracking/d
 3. Open a new terminal and start TensorBoard for visualizing the training progress.
 ```bash
 tensorboard --logdir ./output/Detrac_09_09/cosine-softmax/ --host=0.0.0.0 --port 6006
-```
+
 4. Open a web browser and go to http://localhost:6006/ to view the TensorBoard.
+
+
 
 ### DeepSort Model Evaluation
 1. Open a new terminal and run the evaluation script for the DeepSort model.
@@ -49,6 +51,17 @@ CUDA_VISIBLE_DEVICES="" python train_market1501.py  --mode=eval  --dataset_dir=.
 tensorboard --logdir ./eval_output/Detrac_09_09/cosine-softmax/ --host=0.0.0.0 --port 6007
 ```
 3. Open a web browser and go to http://localhost:6007/ to view the TensorBoard.
+
+
+## DeepSort Model export
+
+To export your trained model for use with the deep_sort tracker, run the following command and change model.ckpt-47054 to your latest checkpoint :
+```bash
+python train_market1501.py --mode=freeze --restore_path=output/Detrac_09_09/cosine-softmax/model.ckpt-47054
+```
+This will create a detrac-deepsort.pb file which can be supplied to Deep SORT. 
+
+
 
 ## YOLOv4 Preparation
 
@@ -83,8 +96,23 @@ make
 
 
 ## Testing yolov4+deepsort
+1. Activate the virtual environment for YOLOv4 GPU.
+```bash
+conda activate yolov4-gpu
+```
 
+2. Convert darknet weights to tensorflow model
 
+```bash
+python save_model.py --model yolov4 --weights ../darknet/backup/yolov4-obj_best.weights --output ./checkpoints/yolov4
+```
+
+3. Run yolov4 deep sort object tracker on video
+```bash
+python object_tracker.py --video ./data/video/cars.mp4 --output ./outputs/cars_09_09.avi --yolo_weights ./checkpoints/yolov4 --deep_sort_weights ../cosine_metric_learning/detrac-deepsort.pb  --dont_show
+```
+
+4. You will find the ouptut video in ./outputs/ 
 
 
 ## References and Credits
