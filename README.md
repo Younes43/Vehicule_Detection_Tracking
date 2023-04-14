@@ -3,7 +3,7 @@
 This GitHub repository contains code for training and testing a vehicle detection and tracking system using DeepSort algorithm and YOLOv4 object detector. The repository provides step-by-step instructions on how to prepare the data, train the models, and test the models for vehicle detection and tracking.
 
 ## Modules Diagram 
-![Detection and Tracking](./detection-tracking-diagram2.png)
+![Detection and Tracking](detection-tracking-diagram2.png)
 
 ## Data Preparation
 
