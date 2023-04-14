@@ -76,7 +76,7 @@ python detrac_to_yolo.py --DETRAC_images ../../../data/Insight-MVT_Annotation_Tr
 3. Copy the produced files into Yolo directory 
 ```bash
 cp train.txt valid.txt detrac_classes.names DETRAC.data ~/Vehicule_Detection_Tracking/darknet/data/
-cp yolov4-obj.cfg yolov4.conv.137 ~/Vehicule_Detection_Tracking/darknet/cfg/
+cp yolov4-obj.cfg ~/data/yolov4.conv.137 ~/Vehicule_Detection_Tracking/darknet/cfg/
 ```
 ## YOLOv4 Training
 
