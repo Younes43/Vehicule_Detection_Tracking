@@ -80,3 +80,22 @@ make
 
 
 ## Testing yolov4+deepsort
+
+
+
+
+## References and Credits
+
+The following GitHub repositories were used in the development of this project:
+
+- [DETRAC Tools](https://github.com/LeonLok/Multi-Camera-Live-Object-Tracking) by LeonLok
+- [DeepSort: Cosine Metric Learning](https://github.com/nwojke/cosine_metric_learning) by Nwojke
+- [YOLOv4 Darknet](https://github.com/AlexeyAB/darknet) by AlexeyAB
+- [Yolov4 & Deepsort](https://github.com/theAIGuysCode/yolov4-deepsort) by Atwine
+
+
+We would like to thank the authors of these repositories for their contributions to the field of computer vision and object tracking, which greatly aided the development of our project. 
+
+Please refer to the respective repositories for more information and details on how to use their code. 
+
+
