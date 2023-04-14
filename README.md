@@ -111,6 +111,8 @@ This will create a detrac-deepsort.pb file which can be supplied to Deep SORT.
 
 ## YOLOv4 Training
 
+Please Reffer to this repository - [YOLOv4 Darknet](https://github.com/AlexeyAB/darknet)  for more detailed documentation on Yolov4 Darknet Training , And follow the commands bellow to train DeepSort Model.
+
 4. Navigate to the darknet directory
 ```bash
 cd ~/Vehicule_Detection_Tracking/darknet
