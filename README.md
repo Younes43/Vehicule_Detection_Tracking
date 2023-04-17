@@ -21,7 +21,7 @@ All the data is already downloaded and stored in the ~/data directory in the hom
 
 ## Data Preparation
 
-Please Reffer to this repository - [DETRAC Tools](https://github.com/LeonLok/Multi-Camera-Live-Object-Tracking/detrac_tools) for detailed documentation on the data preparation for the DETRAC Dataset, And follow the commands bellow to prepare the dataset.
+Please Reffer to this repository - [DETRAC Tools](https://github.com/LeonLok/Multi-Camera-Live-Object-Tracking/tree/master/detrac_tools) for detailed documentation on the data preparation for the DETRAC Dataset, And follow the commands bellow to prepare the dataset.
 
 
 
