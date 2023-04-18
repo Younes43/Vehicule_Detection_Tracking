@@ -117,9 +117,14 @@ Please Reffer to this repository - [YOLOv4 Darknet](https://github.com/AlexeyAB/
 ```bash
 cd ~/Vehicule_Detection_Tracking/darknet
 ```
-5. Compile darknet by runing the following command
+5. Compile darknet by runing the following commands
 
-make
+```bash
+mkdir build_release
+cd build_release
+cmake ..
+cmake --build . --target install --parallel 8
+```
 
 6. Launch the training of YOLOv4 using the command 
 ```bash
