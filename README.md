@@ -39,7 +39,7 @@ cd ~/Vehicule_Detection_Tracking/Multi-Camera-Live-Object-Tracking/detrac_tools
 ```
 3. Run the crop_dataset.py script to prepare the DeepSort dataset.
 ```bash
-python crop_dataset.py --DETRAC_images ../../../data/Insight-MVT_Annotation_Train/ --DETRAC_annots ../../../data/DETRAC-Train-Annotations-XML-v3/ --output_train ./Detrac_deepsort/bouding_box_train/ --occlusion_threshold=0.6 --truncation_threshold=0.6 --occurrences=50
+python crop_dataset.py --DETRAC_images ../../../data/Insight-MVT_Annotation_Train/ --DETRAC_annots ../../../data/DETRAC-Train-Annotations-XML-v3/ --output_train ./Detrac_deepsort/bounding_box_train/ --occlusion_threshold=0.6 --truncation_threshold=0.6 --occurrences=50
 ```
 
 
@@ -51,7 +51,7 @@ cd ~/Vehicule_Detection_Tracking/Multi-Camera-Live-Object-Tracking/detrac_tools
 ```
 2. Run the detrac_to_yolo.py script to prepare the YOLOv4 dataset.
 ```bash
-python detrac_to_yolo.py --DETRAC_images ../../../data/Insight-MVT_Annotation_Train/ --DETRAC_annots ../../../data/DETRAC-Train-Annotations-XML-v3/ --output_train ./DETRAC_YOLO_training_09_09/ --occlusion_threshold=0.9 --truncation_threshold=0.9
+python detrac_to_yolo.py --DETRAC_images ../../../data/Insight-MVT_Annotation_Train/ --DETRAC_annots ../../../data/DETRAC-Train-Annotations-XML-v3/ --output_train ./DETRAC_YOLO_training/ --occlusion_threshold=0.6 --truncation_threshold=0.6
 ```
 3. Copy the produced files into Yolo directory 
 ```bash
@@ -72,7 +72,7 @@ conda activate tf15-gpu
 
 2. Navigate to the cosine_metric_learning directory.
 ```bash
-cd ~/Vehicule_Detection_Tracking/Multi-Camera-Live-Object-Tracking/cosine_metric_learning/
+cd ~/Vehicule_Detection_Tracking/cosine_metric_learning/
 ```
 3. Run the train_market1501.py script to train the DeepSort model.
 ```bash
