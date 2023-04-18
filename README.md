@@ -120,6 +120,8 @@ cd ~/Vehicule_Detection_Tracking/darknet
 5. Compile darknet by runing the following commands
 
 ```bash
+make clean
+rm -rf build_release
 mkdir build_release
 cd build_release
 cmake ..
