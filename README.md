@@ -51,7 +51,7 @@ cd ~/Vehicule_Detection_Tracking/Multi-Camera-Live-Object-Tracking/detrac_tools
 ```
 2. Run the detrac_to_yolo.py script to prepare the YOLOv4 dataset.
 ```bash
-python detrac_to_yolo.py --DETRAC_images ../../../data/Insight-MVT_Annotation_Train/ --DETRAC_annots ../../../data/DETRAC-Train-Annotations-XML-v3/ --output_train ./DETRAC_YOLO_training/ --occlusion_threshold=0.6 --truncation_threshold=0.6
+python detrac_to_yolo.py --DETRAC_images ../../../data/Insight-MVT_Annotation_Train/ --DETRAC_annots ../../../data/DETRAC-Train-Annotations-XML-v3/ --output_train DETRAC_YOLO_training/ --occlusion_threshold=0.6 --truncation_threshold=0.6
 ```
 3. Copy the produced files into Yolo directory 
 ```bash
