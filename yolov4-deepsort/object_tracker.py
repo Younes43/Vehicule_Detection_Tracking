@@ -24,7 +24,9 @@ from deep_sort.detection import Detection
 from deep_sort.tracker import Tracker
 from tools import generate_detections as gdet
 flags.DEFINE_string('framework', 'tf', '(tf, tflite, trt')
-flags.DEFINE_string('weights', './checkpoints/yolov4-416',
+flags.DEFINE_string('yolo_weights', './checkpoints/yolov4-416',
+                    'path to yolo weights file')
+flags.DEFINE_string('deep_sort_weights', './model_data/market1501.pb',
                     'path to weights file')
 flags.DEFINE_integer('size', 416, 'resize images to')
 flags.DEFINE_boolean('tiny', False, 'yolo or yolo-tiny')
@@ -45,7 +47,7 @@ def main(_argv):
     nms_max_overlap = 1.0
     
     # initialize deep sort
-    model_filename = 'model_data/market1501.pb'
+    model_filename = FLAGS.deep_sort_weights
     encoder = gdet.create_box_encoder(model_filename, batch_size=1)
     # calculate cosine distance metric
     metric = nn_matching.NearestNeighborDistanceMetric("cosine", max_cosine_distance, nn_budget)
@@ -62,7 +64,7 @@ def main(_argv):
 
     # load tflite model if flag is set
     if FLAGS.framework == 'tflite':
-        interpreter = tf.lite.Interpreter(model_path=FLAGS.weights)
+        interpreter = tf.lite.Interpreter(model_path=FLAGS.yolo_weights)
         interpreter.allocate_tensors()
         input_details = interpreter.get_input_details()
         output_details = interpreter.get_output_details()
@@ -70,7 +72,7 @@ def main(_argv):
         print(output_details)
     # otherwise load standard tensorflow saved model
     else:
-        saved_model_loaded = tf.saved_model.load(FLAGS.weights, tags=[tag_constants.SERVING])
+        saved_model_loaded = tf.saved_model.load(FLAGS.yolo_weights, tags=[tag_constants.SERVING])
         infer = saved_model_loaded.signatures['serving_default']
 
     # begin video capture
