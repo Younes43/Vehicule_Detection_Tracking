@@ -118,7 +118,7 @@ def main():
             functools.partial(net.preprocess, input_is_bgr=True),
             network_factory, args.restore_path,
             image_shape=market1501.IMAGE_SHAPE,
-            output_filename="./market1501.pb")
+            output_filename="./detrac-deepsort.pb")
     else:
         raise ValueError("Invalid mode argument.")
 
