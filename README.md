@@ -154,7 +154,7 @@ python object_tracker.py --video ./data/video/cars.mp4 --output ./outputs/cars_o
 
 4. You will find the ouptut video in ./outputs/ 
 
-## Tracking and Detection Evaluation on Detrac Test Set
+## Evaluation on Detrac Test Set
 
 The Directory /evaluation contains scripts for preparing and runing the Evaluation 
 
