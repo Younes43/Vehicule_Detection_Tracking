@@ -33,6 +33,7 @@ flags.DEFINE_boolean('tiny', False, 'yolo or yolo-tiny')
 flags.DEFINE_string('model', 'yolov4', 'yolov3 or yolov4')
 flags.DEFINE_string('video', './data/video/test.mp4', 'path to input video or set to 0 for webcam')
 flags.DEFINE_string('output', None, 'path to output video')
+flags.DEFINE_string('output_file', 'output.csv', 'name of output file')
 flags.DEFINE_string('output_format', 'XVID', 'codec used in VideoWriter when saving video to file')
 flags.DEFINE_float('iou', 0.45, 'iou threshold')
 flags.DEFINE_float('score', 0.50, 'score threshold')
@@ -93,10 +94,10 @@ def main(_argv):
         out = cv2.VideoWriter(FLAGS.output, codec, fps, (width, height))
 
     frame_num = 0
-    file1_name="output.csv"
-    if os.path.exists("output.csv"):
-        os.remove("output.csv")
-    file1 = open("output.csv", "a")
+    file1_name=FLAGS.output_file
+    if os.path.exists(file1_name):
+        os.remove(file1_name)
+    file1 = open(file1_name, "a")
     # while video is running
     while True:
         return_value, frame = vid.read()
