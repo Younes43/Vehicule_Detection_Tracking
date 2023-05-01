@@ -181,17 +181,17 @@ MVI_40712.xml is the annotation file for the video MVI_40712.mp4
 python run_evaluation.py --gt MVI_40712.csv --pred MVI_40712_output_filtered.csv 
 ```
 
-You should get a table result containing the following metrics :
+You should get a table result containing the following metrics :  
 
 
-num_frames : Total Number of frames in the video
-Rcll : Recall
-Prcn : Precision
-GT : Total Ground truth objects
-FP : Number of False Positives
-FN : Number of False Negatives
-IDsw : Identity switches
-MOTA : Multi Object Tracking Accuracy
+num_frames : Total Number of frames in the video  
+Rcll : Recall  
+Prcn : Precision  
+GT : Total Ground truth objects  
+FP : Number of False Positives  
+FN : Number of False Negatives  
+IDsw : Identity switches  
+MOTA : Multi Object Tracking Accuracy  
 
 
 ## References and Credits
