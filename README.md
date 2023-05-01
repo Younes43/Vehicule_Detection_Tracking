@@ -168,6 +168,8 @@ conda activate yolov4-gpu
 python object_tracker.py --video ../evaluation/MVI_40712.mp4 --output ./outputs/MVI_40712_output.avi --output_file MVI_40712_output.csv --yolo_weights ./checkpoints/yolov4 --deep_sort_weights ../cosine_metric_learning/detrac-deepsort.pb  --dont_show 
 ```
 
+You can Check visualy the resulting video in ./outputs/MVI_40712_output.avi  
+
 3. Prepare the files we need for evaluation 
 
 ```bash
