@@ -181,9 +181,8 @@ MVI_40712.xml is the annotation file for the video MVI_40712.mp4
 python run_evaluation.py --gt MVI_40712.csv --pred MVI_40712_output_filtered.csv 
 ```
 
-You should get a result similar to this :
-     num_frames      Rcll     Prcn     GT    FP   FN  IDsw      MOTA
-acc        2400  0.987895  0.93852  23627  1529  286    18  0.922419
+You should get a table result containing the following metrics :
+
 
 num_frames : Total Number of frames in the video
 Rcll : Recall
