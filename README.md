@@ -154,6 +154,46 @@ python object_tracker.py --video ./data/video/cars.mp4 --output ./outputs/cars_o
 
 4. You will find the ouptut video in ./outputs/ 
 
+## Tracking and Detection Evaluation on Detrac Test Set
+
+The Directory /evaluation contains scripts for preparing and runing the Evaluation 
+
+1. Activate the virtual environment yolov4-gpu if it is not already done .
+```bash
+conda activate yolov4-gpu
+```
+
+2. Run yolov4 deepsort object tracker on a video from the test Set (In this Example we ran the evaluationon the video MVI_40712.mp4 you should change 'MVI_40712' to the name of the video you want to evaluate the model on )
+```bash
+python object_tracker.py --video ../evaluation/MVI_40712.mp4 --output ./outputs/MVI_40712_output.avi --output_file MVI_40712_output.csv --yolo_weights ./checkpoints/yolov4 --deep_sort_weights ../cosine_metric_learning/detrac-deepsort.pb  --dont_show 
+```
+
+3. Prepare the files we need for evaluation 
+
+```bash
+python prepare_evaluation.py --gt_xml MVI_40712.xml --gt_csv MVI_40712.csv --model_out ../yolov4-deepsort/MVI_40712_output.csv --model_out_filtered MVI_40712_output_filtered.csv
+```
+MVI_40712.xml is the annotation file for the video MVI_40712.mp4
+
+
+4. Run the Evaluation 
+```bash
+python run_evaluation.py --gt MVI_40712.csv --pred MVI_40712_output_filtered.csv 
+```
+
+You should get a result similar to this :
+     num_frames      Rcll     Prcn     GT    FP   FN  IDsw      MOTA
+acc        2400  0.987895  0.93852  23627  1529  286    18  0.922419
+
+num_frames : Total Number of frames in the video
+Rcll : Recall
+Prcn : Precision
+GT : Total Ground truth objects
+FP : Number of False Positives
+FN : Number of False Negatives
+IDsw : Identity switches
+MOTA : Multi Object Tracking Accuracy
+
 
 ## References and Credits
 
